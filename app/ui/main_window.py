@@ -113,6 +113,7 @@ class MainWindow(QMainWindow):
         self._details_open = False
         self._quit_requested = False
         self._auto_lock_in_progress = False
+        self._locked_in_tray = False
         self._clipboard_secret_fingerprint: str | None = None
         self._clipboard_secret_value: str | None = None
         self._clipboard_clear_timer: QTimer | None = None
@@ -720,6 +721,7 @@ class MainWindow(QMainWindow):
             self._auto_lock_timer.stop()
         self._clear_sensitive_data()
         self.hide()
+        self._locked_in_tray = True
         QMessageBox.information(None, "Vault locked", "Vault was auto-locked due to inactivity.")
         if callable(self._on_lock):
             self._on_lock()
@@ -738,6 +740,11 @@ class MainWindow(QMainWindow):
             self._restore_from_tray()
 
     def _restore_from_tray(self) -> None:
+        if self._locked_in_tray:
+            self._locked_in_tray = False
+            if callable(self._on_lock):
+                self._on_lock()
+            return
         self.showNormal()
         self.activateWindow()
         self.raise_()
@@ -760,6 +767,10 @@ class MainWindow(QMainWindow):
                 app.removeEventFilter(self)
             event.accept()
             return
+        if hasattr(self, "_auto_lock_timer"):
+            self._auto_lock_timer.stop()
+        self._clear_sensitive_data()
+        self._locked_in_tray = True
         self.hide()
         self.tray_icon.showMessage(
             config.APP_NAME,
