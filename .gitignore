@@ -1,0 +1,79 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# IDE / editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets / config
+.env
+.env.*
+*.key
+*.pem
+*.pfx
+*.crt
+*.cert
+
+# Database / runtime
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+data/*backup*.db
+data/vault_before_security_fix_*.db
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+logs/
+
+# Backups / exports
+backups/
+exports/
+password_vault_backup_*.db
+vault_before_security_fix_*.db
+
+# Archives
+program*.zip
+
+# Build / package
+build/
+dist/
+*.spec
+*.egg-info/
+installer_build/
+*.manifest
+*.pkg
+
+# Windows installers / binaries
+*.exe
+*.msi
+*.msix
+*.appx
+*.appxbundle
+*.msixbundle
+
+# Temporary
+tmp/
+temp/
+*.tmp
