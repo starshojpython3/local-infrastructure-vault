@@ -3,7 +3,7 @@
 # Local Infrastructure Vault
 
 > Status: MVP / Prototype  
-> Локальний encrypted infrastructure credentials vault. Не аудитований. Не production-ready.
+> Локальний зашифрований vault для обліку доступів до технічної інфраструктури. Не аудитований. Не production-ready.
 
 Local Infrastructure Vault - це local-first encrypted desktop застосунок для обліку доступів до технічної інфраструктури: серверів, камер, edge-пристроїв, мережевого обладнання, баз даних, API, SSH, RTSP-потоків, admin panel і внутрішніх сервісів.
 
@@ -118,7 +118,7 @@ Local Infrastructure Vault сфокусований на обліку інфра
 
 ```bash
 git clone <repo-url>
-cd password_vault
+cd local-infrastructure-vault
 python -m venv .venv
 ```
 
@@ -240,3 +240,4 @@ config.py
 ## Ліцензія
 
 Проєкт розповсюджується за MIT License.
+
