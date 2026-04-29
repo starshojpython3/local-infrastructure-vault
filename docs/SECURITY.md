@@ -1,8 +1,8 @@
-﻿# Security Policy
+# Security Policy
 
 ## Current Security Status
 
-This project is a local password vault prototype for desktop use.
+This project is a local-first infrastructure credentials vault prototype for desktop use.
 
 - It has not undergone a professional third-party security audit.
 - It is not recommended for storing critical production credentials.
@@ -27,3 +27,4 @@ This project is a local password vault prototype for desktop use.
 ## Reporting
 
 If you find a security issue, open a private report to the maintainer before publishing details publicly.
+

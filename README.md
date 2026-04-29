@@ -1,60 +1,78 @@
-ï»¿[Ð£ÐºÑ€Ð°Ñ—Ð½ÑÑŒÐºÐ° Ð²ÐµÑ€ÑÑ–Ñ](README_UA.md)
+[Óêðà¿íñüêà âåðñ³ÿ](README_UA.md)
 
-# Local Password Vault
+# Local Infrastructure Vault
 
 > Status: MVP / Prototype  
-> Local-only encrypted password vault. Not audited. Not production-ready.
+> Local-only encrypted infrastructure credentials vault. Not audited. Not production-ready.
 
-Local-first encrypted password vault.
-Desktop application built with Python and PyQt.
-Designed for personal, development, internal, and lab usage.
-Not cloud-based.
-Not professionally audited.
-Not a replacement for audited enterprise password managers.
+Local Infrastructure Vault is a local-first encrypted desktop application for organizing technical infrastructure access: servers, cameras, edge devices, network devices, databases, APIs, SSH accounts, RTSP streams, admin panels, and internal services.
+
+Credentials are organized through organizations, groups, devices, and related records.
+The project is not cloud-based, has not undergone a professional security audit, and is not a replacement for audited enterprise password managers.
 
 ## Overview
 
-Local Password Vault is a local encrypted password vault for storing:
+Local Infrastructure Vault is focused on infrastructure access inventory and credentials management for technical workflows.
 
-- organizations
-- groups
-- devices
+You can organize and store:
+
+- organizations / clients / environments
+- groups / locations / projects
+- devices / servers / services
 - credentials
+- IP addresses
+- URLs / admin panels
 - SSH-related data
-- notes
-- IP
-- URL
-- login
-- password
+- RTSP / API / service endpoints
+- login / password pairs
+- technical notes
 
-The project is focused on practical local secret management for personal and internal workflows, without claiming enterprise-grade audited security.
+## What this project is for
+
+- small technical teams
+- R&D labs
+- DevOps / sysadmin workflows
+- infrastructure inventory with credentials
+- camera / NVR / RTSP projects
+- edge AI devices
+- local lab environments
+- offline-first internal tooling
+
+## What this project is NOT
+
+This project is NOT:
+
+- a replacement for audited enterprise password managers
+- a cloud password manager
+- a browser autofill tool
+- a mobile password manager
+- a secrets manager for production CI/CD pipelines
+- a zero-trust enterprise security platform
 
 ## Current Status
-
-Local-first encrypted password vault MVP.
 
 - MVP / prototype
 - local-only
 - security-focused, but not audited
-- suitable for personal/internal experiments
-- suitable for development and lab environments
+- suitable for personal, lab, internal, and development infrastructure workflows
 - not recommended for highly critical production secrets without independent security review
 
 ## Features
 
-- Local encrypted vault
+- Local encrypted infrastructure vault
 - SQLite-based local storage
 - Encrypted credential payloads
 - Encrypted metadata
+- Organization / group / device hierarchy
+- Credentials linked to devices, services, and technical assets
+- Support for IP, URL, login, password, SSH-related fields, and notes
+- Useful for servers, cameras, routers, edge devices, lab machines, databases, APIs, and internal services
 - Master password protection
 - Auto-lock after inactivity
 - Clipboard auto-clear for copied secrets
 - Show/hide password controls
 - Password generator
 - Password reuse warning
-- Organization / group / device hierarchy
-- Credential notes, IP, URL, login, password fields
-- SSH-related fields support
 - RAM-only search index
 - Search over decrypted non-secret fields
 - Secret-like fields excluded from search index by default
@@ -123,11 +141,13 @@ python main.py
 ## Usage
 
 - Create a master password.
-- Unlock the vault.
-- Create organizations, groups, and devices.
-- Add credentials.
-- Use search.
-- Copy passwords when needed.
+- Create an organization / client / environment.
+- Create a group / location / project.
+- Create a device / server / service.
+- Add credentials and technical notes.
+- Store IP / URL / SSH / RTSP / API / admin panel information.
+- Search by non-secret technical fields.
+- Copy secrets when needed.
 - Create encrypted database backups.
 - Vault auto-locks after inactivity.
 
@@ -139,15 +159,15 @@ Notes:
 
 ### Usage Examples
 
-Credentials table with hierarchy and masked passwords:
+Infrastructure credentials table with organization/group/device hierarchy:
 
 ![Credentials list](usage-01-credentials-list.png)
 
-Device details view with quick copyable fields:
+Device or service details with quick-copy technical fields:
 
 ![Device details](usage-02-device-details.png)
 
-Credential create/edit form:
+Credential form for server/device/service access data:
 
 ![Credential form](usage-03-credential-form.png)
 
@@ -220,5 +240,3 @@ For questions, feedback, or security-related reports, contact:
 ## License
 
 This project is released under the MIT License.
-
-

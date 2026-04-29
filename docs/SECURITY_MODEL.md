@@ -1,8 +1,8 @@
-﻿# Security Model
+# Security Model
 
 ## Scope
 
-This project is designed as a local-only password vault MVP.
+This project is designed as a local-only infrastructure credentials vault MVP.
 
 ## Core Model
 
@@ -20,3 +20,4 @@ This project is designed as a local-only password vault MVP.
 - Security depends on local machine integrity and OS account security.
 - Backups should be handled carefully and stored securely.
 - This project is not professionally audited.
+
